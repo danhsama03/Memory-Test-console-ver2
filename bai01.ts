@@ -1,10 +1,14 @@
-import {question} from "readline-sync";
+import { question } from "readline-sync";
 
-let mediumScore: number;
-mediumScore = Number(question("Nhap diem trung binh:"));
-
-if (mediumScore >= 5) {
-    console.log("Dau");
-} else {
-    console.log("Rot");
+/**
+ * Hàm in ra thông tin của người dùng
+ */
+function xinChao(): void {
+    console.log("Xin chào, mình tên là Bảo.");
+    console.log("Mình sinh năm 2003.");
+    console.log("Rất vui được gặp bạn.");
 };
+
+xinChao();
+
+export {}

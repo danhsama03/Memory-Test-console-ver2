@@ -1,14 +1,17 @@
-import {question} from "readline-sync";
+import { question } from "readline-sync";
 
-let powerNumber: number;
-powerNumber = Number(question("Nhap so quyen luc cua ban:"));
-
-if (powerNumber >= 100 && powerNumber <= 999) {
-    if (powerNumber / 9 >= 100) {
-        console.log("Day la so quyen luc");
-    } else {
-        console.log("Day khong phai so quyen luc");
-    };
-} else {
-    console.log("Nhap so khac ban ei");
+/**
+ * Hàm in ra thông tin người dùng
+ * @param ten Tên của người dùng
+ * @param namSinh Năm sinh của người dùng  
+ */
+function xinChao(ten: string, namSinh: number): void {
+    console.log("Xin chào, mình tên là " + ten + ".");
+    console.log("Mình sinh năm " + namSinh + ".");
+    console.log("Rất vui được gặp bạn.");
 };
+
+xinChao('Kmin', 2016)
+xinChao('Bao', 2003)
+
+export {}

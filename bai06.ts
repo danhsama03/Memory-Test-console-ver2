@@ -1,15 +1,23 @@
-import {question} from "readline-sync";
+import { question } from "readline-sync";
 
-let characters: string;
-characters = question("Nhap ki tu:");
+/**
+ * Hàm chuyển đổi độ F thành độ C và trả về độ C
+ * @param doF Độ F để chuyển đổi
+ * @returns Độ C
+ */
+function chuyenDoC(doF: number,): number {
+    let doC: number = 5/9*(doF-32);
+    console.log("Do C la " + doC);
+    return doC;
+}
 
-if (characters >= "a" && characters <= "z") {
-  console.log("Ki tu thuong");
-} else if (characters >= "A" && characters <= "Z") {
-  console.log("Ki tu hoa");
-} else if (Number(characters) >= 0 && Number(characters) <= 9) {
-  console.log("Ki tu so");
-} else {
-  console.log("Ki tu dac biet");
-};
+/**
+ * Hàm chức năng nhập độ F và chuyển thành độ C
+ */
+function cnChuyenDoC(): void {
+    let f: number = Number(question("Nhap do F: "));
+    let doF: number = f;
+    chuyenDoC(doF);
+}
 
+cnChuyenDoC();

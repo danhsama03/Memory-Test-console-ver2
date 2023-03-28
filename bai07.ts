@@ -1,24 +1,27 @@
-import {question} from "readline-sync";
+import { question } from "readline-sync";
 
-let a: number;
-a = Number(question("Nhap a:"));
-let b: number;
-b = Number(question("Nhap b:"));
-let c: number;
-c = Number(question("Nhap c:"));
-let x1: number, x2: number;
-
-const delta:number =(b*b-4*a*c)
-if (delta == 0) {
-    x1 = -b / (2 * a);
-    x2 = -b / (2 * a);
-    console.log(x1, x2);
-} else if (delta < 0) {
-    console.log("VN");
-} else if (a == 0 && b == 0 && c == 0) {
-    console.log("VSN");
-} else {
-    x1 = (-b - Math.sqrt(delta)) / (2 * a);
-    x2 = (-b + Math.sqrt(delta)) / (2 * a);
-    console.log(x1, x2);
+/**
+ * Hàm kiểm trả có phải tam giác đều
+ * @param a Cạnh a của tam giác
+ * @param b Cạnh b của tam giác
+ * @param c Cạnh c của tam giác
+ */
+function kiemTraTamGiacDeu(a: number, b: number, c: number): void {
+    if (a == b || b == c || a == c) {
+        console.log("Yes");
+    } else {
+        console.log("No");
+    }
 };
+
+/**
+ * Hàm chức năng nhập cạnh a, b, c và kiểm tra có phải tam giác đều
+ */
+function cnKiemTraTamGiacDeu(): void {
+    let a: number = Number(question("Nhap canh a: "));
+    let b: number = Number(question("Nhap canh b: "));
+    let c: number = Number(question("Nhap canh c: "));
+    kiemTraTamGiacDeu(a, b, c);
+}
+
+cnKiemTraTamGiacDeu();
