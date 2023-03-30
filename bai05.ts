@@ -1,53 +1,58 @@
 import { question } from "readline-sync";
-
 /**
- * In ra lời chào và trả về tuổi
- * @param ten Tên của người dùng
- * @param namSinh Tuổi của người dùng
- * @returns Tuổi của người dùng
+ * Ham nhap cac phan tu theo so luong
+ * @param len So luong phan tu 
+ * @returns Tra ve mang
  */
-function xinChao(ten: string, namSinh: number): number {
-    console.log("Xin chào, mình tên là " + ten + ".");
-    console.log("Mình sinh năm " + namSinh + ".");
-    console.log("Rất vui được gặp bạn.");
-    const tuoi: number = 2023 - namSinh;
-	console.log(tuoi);
-    return tuoi;
+function nhapMang(len: number): number[] {
+	let arr: number[] = [];
+	for (let i = 0; i < len; i++) {
+        arr[i] = Number(question(`Nhap phan tu vi tri ${i}: `));
+    };
+	return arr;
 };
 
 /**
- * Lấy tên từ bàn phím
- * @returns Tên hợp lệ
+ * Ham kiem tra la so nguyen to
+ * @param x Phan tu trong mang
+ * @returns Tra ve true hoac false
  */
-function nhapTen(): string {
-    let ten: string = "";
-    do {
-        ten = question("Nhap ten: ");
-    } while (ten == "");
-	return ten;
+function laSNT(x: number): boolean {
+    let dem: number = 0;
+    for (let i = 1; i <= x; i++) {
+        if (x % i == 0) {
+            dem++;
+        };
+    };
+
+    if (dem == 2) {
+        return true;
+    } else {
+        return false;
+    };   
 };
 
 /**
- * Lấy năm sinh từ bàn phím
- * @returns Năm sinh hợp lệ
+ * Ham liet ke so nguyen to
+ * @param arr Mang
  */
-function nhapNamSinh(): number {
-	let namSinh: number = 0;
-    do {
-        namSinh = Number(question("Nhap nam sinh: "));
-    } while (namSinh <= 0 || namSinh >= 2024);
-	return namSinh;
+function lietKeSNT(arr: number[]): void {
+    for (let i = 0; i < arr.length; i++) {
+        if (laSNT(arr[i]) == true) {
+            console.log(arr[i]);
+        };
+    };
 };
 
 /**
- * Hàm chức năng nhập tên, tuổi và in thông tin người dùng
+ * Ham chuc nang nhap so luong phan tu, goi ham nhap mang, ham liet ke SNT
  */
-function cnXinChao(): void {
-	let ten: string = nhapTen();
-    let namSinh: number = nhapNamSinh();
-	xinChao(ten, namSinh);
+function main(): void {
+    let n: number = Number(question("Nhap so luong phan tu: "));
+    let a: number[] = nhapMang(n);
+    lietKeSNT(a);
 };
 
-cnXinChao();
+main();
 
-export {}
+export {};

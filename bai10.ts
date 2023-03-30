@@ -1,38 +1,40 @@
 import { question } from "readline-sync";
+/**
+ * Ham nhap cac phan tu theo so luong
+ * @param len So luong phan tu 
+ * @returns Tra ve mang
+ */
+function nhapMang(len: number): number[] {
+	let arr: number[] = [];
+	for (let i = 0; i < len; i++) {
+        arr[i] = Number(question(`Nhap phan tu vi tri ${i}: `));
+    };
+	return arr;
+};
 
 /**
- * Hàm liệt kê số nguyên tố trong khoảng m, n
- * @param m Khoảng bắt đầu để liệt kê số nguyên tố
- * @param n Khoảng kết thúc để liệt kê số nguyên tố
+ * Ham tim so lon nhat
+ * @param arr Mang
  */
-function LietKeSoNguyenTo(m: number, n: number): void {
-    if (m <= 5) {
-        for (let i: number = m; i <= 5; i++) {
-            if (i > 2 && i % 2 != 0) {
-                console.log(i);
-            };
-        };
-        for (let i: number = m; i <= n - 1; i++) {
-            if (i > 2 && i % 2 != 0 && i % 3 != 0 && i % 5 != 0) {
-                console.log(i);
-            };
-        };
-    } else {
-        for (let i: number = m; i <= n - 1; i++) {
-            if (i > 2 && i % 2 != 0 && i % 3 != 0 && i % 5 != 0) {
-                console.log(i);
-            };
+function timMax(arr: number[]): void {
+    let max: number = 0;
+    for (let i = 0; i <= arr.length; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
         };
     };
+    console.log(max);
 };
 
 /**
- * Hàm chức năng nhập khoảng m, n và liệt kê số nguyên tố trong khoảng m, n
+ * Ham chuc nang nhap so luong phan tu, goi ham nhap mang, ham tim so lon nhat
  */
-function cnLietKeSoNguyenTo(): void {
-    let m: number = Number(question("Nhap m: "));
-    let n: number = Number(question("Nhap n: "));
-    LietKeSoNguyenTo(m, n);
+function main(): void {
+    let n: number = Number(question("Nhap so luong phan tu: "));
+    let a: number[] = nhapMang(n);
+    timMax(a);
 };
 
-cnLietKeSoNguyenTo();
+main();
+
+export {};

@@ -1,23 +1,38 @@
 import { question } from "readline-sync";
+/**
+ * Ham nhap cac phan tu theo so luong
+ * @param len So luong phan tu 
+ * @returns Tra ve mang
+ */
+function nhapMang(len: number): number[] {
+	let arr: number[] = [];
+	for (let i = 0; i < len; i++) {
+        arr[i] = Number(question(`Nhap phan tu vi tri ${i}: `));
+    };
+	return arr;
+};
 
 /**
- * Hàm chuyển đổi độ F thành độ C và trả về độ C
- * @param doF Độ F để chuyển đổi
- * @returns Độ C
+ * Ham liet ke so le
+ * @param arr Mang
  */
-function chuyenDoC(doF: number,): number {
-    let doC: number = 5/9*(doF-32);
-    console.log("Do C la " + doC);
-    return doC;
-}
+function lietKeSoLe(arr: number[]): void {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 1) {
+            console.log(arr[i]);
+        };
+    };
+};
 
 /**
- * Hàm chức năng nhập độ F và chuyển thành độ C
+ * Ham chuc nang nhap so luong phan tu, goi ham nhap mang, ham liet ke so le
  */
-function cnChuyenDoC(): void {
-    let f: number = Number(question("Nhap do F: "));
-    let doF: number = f;
-    chuyenDoC(doF);
-}
+function main(): void {
+    let n: number = Number(question("Nhap so luong phan tu: "));
+    let a: number[] = nhapMang(n);
+    lietKeSoLe(a);
+};
 
-cnChuyenDoC();
+main();
+
+export {};

@@ -1,29 +1,38 @@
 import { question } from "readline-sync";
 
 /**
- * Hàm in ra thông tin và trả về tuổi
- * @param ten Tên của người dùng
- * @param namSinh Năm sinh của người dùng
- * @returns Tuổi của người dùng
+ * Ham nhap cac phan tu theo so luong
+ * @param len So luong phan tu
+ * @returns Tra ve mang
  */
-function xinChao(ten: string, namSinh: number): number {
-    console.log("Xin chào, mình tên là " + ten + ".");
-    console.log("Mình sinh năm " + namSinh + ".");
-    console.log("Rất vui được gặp bạn.");
-    const tuoi: number = 2023 - namSinh;
-	console.log(tuoi);
-    return tuoi;
-};
-
-/**
- * Hàm chức năng nhập tên, năm sinh và in ra thông tin
- */
-function cnXinChao(): void {
-	let ten: string = question("Nhap ten: ");
-	let namSinh: number = Number(question("Nhap nam sinh: "));
-	xinChao(ten, namSinh);
+function nhapMang(len: number): number[] {
+	let arr: number[] = [];
+	for (let i = 0; i < len; i++) {
+        arr[i] = Number(question(`Nhap phan tu vi tri ${i}: `));
+    }
+	return arr;
 }
 
-cnXinChao();
+/**
+ * Ham liet ke so duong trong mang 
+ * @param arr Mang
+ */
+function lietKeDuong(arr: number[]): void {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0)
+            console.log(arr[i]);
+    }
+}
 
-export {}
+/**
+ * Ham chuc nang nhap so luong phan tu, goi ham nhap mang, ham liet ke duong phan tu
+ */
+function main(): void {
+    let n: number = Number(question("Nhap so luong phan tu: "));
+    let a: number[] = nhapMang(n);
+    lietKeDuong(a);
+}
+
+main();
+
+export {};

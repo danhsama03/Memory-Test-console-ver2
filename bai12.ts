@@ -13,25 +13,25 @@ function nhapMang(len: number): number[] {
 };
 
 /**
- * Ham tim am dau tien
+ * Ham tim ton tai duong
  * @param arr Mang
  */
-function timAmDauTien(arr: number[]): void {
+function tonTaiDuong(arr: number[]): void {
     for (let i = 0; i <= arr.length; i++) {
-        if (arr[i] < 0) {
-            console.log(arr[i]);
-            break
+        if (arr[i] > 0) {
+            console.log("Yes");
+            break;
         };
     };
 };
 
 /**
- * Ham chuc nang nhap so luong phan tu, goi ham nhap mang, ham tim am dau tien
+ * Ham chuc nang nhap so luong phan tu, goi ham nhap mang, ham tim ton tai duong
  */
 function main(): void {
     let n: number = Number(question("Nhap so luong phan tu: "));
     let a: number[] = nhapMang(n);
-    timAmDauTien(a);
+    tonTaiDuong(a);
 };
 
 main();

@@ -1,27 +1,40 @@
 import { question } from "readline-sync";
-
 /**
- * Hàm kiểm trả có phải tam giác đều
- * @param a Cạnh a của tam giác
- * @param b Cạnh b của tam giác
- * @param c Cạnh c của tam giác
+ * Ham nhap cac phan tu theo so luong
+ * @param len So luong phan tu 
+ * @returns Tra ve mang
  */
-function kiemTraTamGiacDeu(a: number, b: number, c: number): void {
-    if (a == b || b == c || a == c) {
-        console.log("Yes");
-    } else {
-        console.log("No");
-    }
+function nhapMang(len: number): number[] {
+	let arr: number[] = [];
+	for (let i = 0; i < len; i++) {
+        arr[i] = Number(question(`Nhap phan tu vi tri ${i}: `));
+    };
+	return arr;
 };
 
 /**
- * Hàm chức năng nhập cạnh a, b, c và kiểm tra có phải tam giác đều
+ * Ham tinh tong am
+ * @param arr Mang
  */
-function cnKiemTraTamGiacDeu(): void {
-    let a: number = Number(question("Nhap canh a: "));
-    let b: number = Number(question("Nhap canh b: "));
-    let c: number = Number(question("Nhap canh c: "));
-    kiemTraTamGiacDeu(a, b, c);
-}
+function tinhTongAm(arr: number[]): void {
+    let s: number = 0;
+    for (let i = 0; i <= arr.length; i++) {
+        if (arr[i] < 0) {
+            s = s + arr[i];
+        };
+    };
+    console.log(s);
+};
 
-cnKiemTraTamGiacDeu();
+/**
+ * Ham chuc nang nhap so luong phan tu, goi ham nhap mang, ham tinh tong am
+ */
+function main(): void {
+    let n: number = Number(question("Nhap so luong phan tu: "));
+    let a: number[] = nhapMang(n);
+    tinhTongAm(a);
+};
+
+main();
+
+export {};
