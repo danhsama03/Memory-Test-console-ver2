@@ -5,19 +5,19 @@ function sleep(milliseconds: number): void {
     while (new Date().getTime() - start < milliseconds) {}
 };
 
-function ranDom(min: number, max: number): number {
+function random(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
 
-function ranDomLan1(): number[] {
+function randomLan1(): number[] {
     let mangLanRandom1: number[] = [];
     for (let i: number = 0; i < 5; i++) {
-        mangLanRandom1[i] = ranDom(1, 9);
+        mangLanRandom1[i] = random(1, 9);
     };
     return mangLanRandom1;
 };
 
-let x1: number[] = ranDomLan1();
+let x1: number[] = randomLan1();
 
 function doanLan1(): boolean {
     let bigFlag: boolean = false;
@@ -49,15 +49,15 @@ function doanLan1(): boolean {
     return bigFlag;
 };
 
-function ranDomLan2(): number[] {
+function randomLan2(): number[] {
     let mangLanRandom2: number[] = [];
     for (let i: number = 0; i < 5; i++) {
-        mangLanRandom2[i] = ranDom(10, 99);
+        mangLanRandom2[i] = random(10, 99);
     };
     return mangLanRandom2;
 };
 
-let x2: number[] = ranDomLan2();
+let x2: number[] = randomLan2();
 
 function doanLan2(): boolean {
     let bigFlag2: boolean = false;
@@ -89,15 +89,15 @@ function doanLan2(): boolean {
     return bigFlag2;
 };
 
-function ranDomLan3(): number[] {
+function randomLan3(): number[] {
     let mangLanRandom3: number[] = [];
     for (let i: number = 0; i < 5; i++) {
-        mangLanRandom3[i] = ranDom(100, 999);
+        mangLanRandom3[i] = random(100, 999);
     };
     return mangLanRandom3;
 };
 
-let x3: number[] = ranDomLan3();
+let x3: number[] = randomLan3();
 
 function doanLan3(): boolean {
     let bigFlag3: boolean = false;
@@ -129,15 +129,15 @@ function doanLan3(): boolean {
     return bigFlag3;
 };
 
-function ranDomLan4(): number[] {
+function randomLan4(): number[] {
     let mangLanRandom4: number[] = [];
     for (let i: number = 0; i < 5; i++) {
-        mangLanRandom4[i] = ranDom(1000, 9999);
+        mangLanRandom4[i] = random(1000, 9999);
     };
     return mangLanRandom4;
 };
 
-let x4: number[] = ranDomLan4();
+let x4: number[] = randomLan4();
 
 function doanLan4(): boolean {
     let bigFlag4: boolean = false;
@@ -169,15 +169,15 @@ function doanLan4(): boolean {
     return bigFlag4;
 };
 
-function ranDomLan5(): number[] {
+function randomLan5(): number[] {
     let mangLanRandom5: number[] = [];
     for (let i: number = 0; i < 5; i++) {
-        mangLanRandom5[i] = ranDom(10000, 99999);
+        mangLanRandom5[i] = random(10000, 99999);
     };
     return mangLanRandom5;
 };
 
-let x5: number[] = ranDomLan5();
+let x5: number[] = randomLan5();
 
 function doanLan5(): boolean {
     let bigFlag5: boolean = false;
